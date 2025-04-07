@@ -1,0 +1,279 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+header {
+    height: 6.4rem;
+    padding: 0 5rem;
+    background-color: white;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+}
+
+header nav {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+header nav img {
+    height: 90%;
+}
+
+header .nav_left {
+    display: flex;
+    gap: 3.4rem;
+}
+
+.nav_left li {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+.nav_left li sup {
+    margin-left: .4rem;
+    color: #ff3f6c;
+}
+
+header nav .searchbar {
+    flex-grow: 1;
+}
+
+.searchbar input {
+    width: 100%;
+    padding: 0.8rem 0 0.8rem 1rem;
+    background-color: #f5f5f6;
+    border: 1px solid #f5f5f6;
+    outline: 1px solid #f5f5f6;
+    border-radius: 2px;
+}
+
+.searchbar input:hover {
+    background-color: white;
+}
+
+header nav .nav_right {
+    display: flex;
+    gap: 3.4rem;
+}
+
+.nav_right li {
+    font-weight: 600;
+    font-size: 1.2rem;
+}
+
+main {
+    padding: 6.4rem 5rem 0 5rem;
+}
+
+#card_section {
+    padding-top: 2rem;
+}
+
+#card_section .filtered_btn {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2rem;
+    overflow-x: auto;
+}
+
+.filtered_btn button {
+    flex-shrink: 0;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    border: none;
+    background-color: #ff3f6c;
+    color: white;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+#card_section .card_container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 25rem));
+    gap: 4rem;
+    justify-content: center;
+}
+
+.card_container .card {
+    width: 100%;
+    border-radius: 1rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+    background-color: white;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card .card_top {
+    position: relative;
+}
+
+.card_top img {
+    aspect-ratio: 1 / 1;
+    width: 100%;
+}
+
+.card_top p {
+    position: absolute;
+    bottom: 10%;
+    left: 1rem;
+    color: white;
+    background-color: #ff3f6c;
+    padding: 1rem;
+    border-radius: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.card .card_bottom {
+    padding: 1rem;
+}
+
+.card_bottom > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.card_bottom .card_title {
+    font-weight: 700;
+    font-size: 1.2rem;
+}
+
+.card_bottom .card_info {
+    display: flex;
+    justify-content: space-between;
+}
+
+.card_info p {
+    font-weight: 700;
+    font-size: 1.1rem;
+}
+
+.category_section {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    max-width: 320px;
+    width: 90%;
+    background-color: white;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-radius: 18px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.category_section > *:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.category_section .category_top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.category_top button {
+    border: none;
+    outline: none;
+    background-color: #ff3f6c;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: white;
+}
+
+.category_section .line {
+    height: 1px;
+    background-color: black;
+}
+
+.category_section .category_bottom {
+    padding: 0rem 1rem;
+}
+
+.category_bottom div {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.category_bottom div label {
+    font-size: 1.3rem;
+}
+
+.category_bottom > *:not(:last-child) {
+    margin-bottom: .7rem;
+}
+
+.category_bottom button {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: #ff3f6c;
+    padding: .6rem 0;
+    color: white;
+    font-size: 1.7rem;
+    border-radius: 6px;
+}
+
+@media (max-width: 1270px) {
+    header nav .nav_left {
+        display: none;
+    }
+}
+
+@media (max-width: 786px) {
+    html {
+        font-size: 52%;
+    }
+
+    header {
+        padding: 0 3rem;
+    }
+
+    header nav {
+        gap: 3rem;
+    }
+    header nav .nav_right {
+        display: none;
+    }
+
+    main {
+        padding: 6.4rem 3rem 0 3rem;
+    }
+
+    #card_section .filtered_btn {
+        gap: 1.3rem;
+    }
+    
+    .filtered_btn button {
+        padding: .7rem 1rem;
+        font-size: 1.6rem;
+    }
+}
